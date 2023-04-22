@@ -6,6 +6,6 @@ import '@testing-library/jest-dom';
 describe('App', () => {
   it('should render the app', () => {
     const { getByText } = render(() => <App />);
-    expect(getByText('Hello, world!')).toBeInTheDocument();
+    expect(getByText('Dashboard')).toBeInTheDocument();
   });
 });
