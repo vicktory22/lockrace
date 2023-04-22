@@ -1,9 +1,9 @@
 import { Route, Routes, Router } from '@solidjs/router';
-import type { Component } from 'solid-js';
+import { Component, lazy } from 'solid-js';
 import { AuthLayout } from './pages/AuthLayout';
-import { Dashboard } from './pages/Dashboard';
-import { Games } from './pages/Games';
-import { Me } from './pages/Me';
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Games = lazy(() => import('./pages/Games'));
+const Me = lazy(() => import('./pages/Me'));
 
 const App: Component = () => {
   return (
