@@ -1,6 +1,6 @@
 import { JSX } from "solid-js";
 
-export function Dashboard(): JSX.Element {
+export default function Dashboard(): JSX.Element {
   return (
     <article class="prose">
       <h1>
