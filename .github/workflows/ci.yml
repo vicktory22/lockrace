@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -26,5 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
     - run: pnpm install
-    - run: pnpm run build --if-present
+    - run: pnpm run build
     - run: pnpm test -- --run
