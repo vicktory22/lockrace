@@ -2,9 +2,9 @@ import { JSX } from "solid-js";
 import { match } from "ts-pattern";
 
 export default function Login() {
-  const handlePhoneNumberInput: JSX.EventHandlerUnion<HTMLInputElement, InputEvent> = function(e) {
+  const handlePhoneNumberInput: JSX.EventHandlerUnion<HTMLInputElement, InputEvent> = function (e) {
     e.currentTarget.value = maskPhone(e.currentTarget.value);
-  }
+  };
 
   return (
     <div class="container mx-auto px-4 h-full flex flex-col justify-center prose">

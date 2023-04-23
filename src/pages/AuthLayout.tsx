@@ -1,14 +1,14 @@
-import { Outlet, useNavigate } from "@solidjs/router";
-import { createEffect } from "solid-js";
 import { BottomNav } from "../components/BottomNav";
 import { isAuthenticated } from "../services/auth/authenticator";
+import { Outlet, useNavigate } from "@solidjs/router";
+import { createEffect } from "solid-js";
 
 export function AuthLayout() {
   const navigate = useNavigate();
 
   createEffect(() => {
     if (!isAuthenticated()) {
-      navigate('/login', { replace: true });
+      navigate("/login", { replace: true });
     }
   });
 
