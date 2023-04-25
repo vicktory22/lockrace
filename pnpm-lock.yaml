@@ -10,6 +10,9 @@ dependencies:
   magic-sdk:
     specifier: ^17.1.2
     version: 17.1.2
+  neverthrow:
+    specifier: ^6.0.0
+    version: 6.0.0
   solid-js:
     specifier: ^1.6.10
     version: 1.6.10
@@ -2651,6 +2654,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /neverthrow@6.0.0:
+    resolution: {integrity: sha512-kPZKRs4VkdloCGQXPoP84q4sT/1Z+lYM61AXyV8wWa2hnuo5KpPBF2S3crSFnMrOgUISmEBP8Vo/ngGZX60NhA==}
+    dev: false
 
   /next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
