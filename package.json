@@ -8,8 +8,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest",
-    "format": "rome format ./src",
-    "lint": "rome check ./src"
+    "format": "rome format ./src --write",
+    "lint": "rome check --apply-unsafe ./src"
   },
   "license": "MIT",
   "devDependencies": {
