@@ -33,6 +33,7 @@
     "@solidjs/router": "^0.8.2",
     "js-cookie": "^3.0.4",
     "magic-sdk": "^17.1.2",
+    "neverthrow": "^6.0.0",
     "solid-js": "^1.6.10",
     "ts-pattern": "^4.2.2"
   }
