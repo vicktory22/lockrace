@@ -1,6 +1,6 @@
-import { AuthLayout } from "./pages/AuthLayout";
 import { Route, Router, Routes } from "@solidjs/router";
 import { Component, lazy } from "solid-js";
+const AuthLayout = lazy(() => import("./pages/AuthLayout"));
 const Login = lazy(() => import("./pages/Login"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Games = lazy(() => import("./pages/Games"));
