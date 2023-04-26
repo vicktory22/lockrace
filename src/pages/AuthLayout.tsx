@@ -3,7 +3,7 @@ import { isAuthenticated } from "../services/auth/authenticator";
 import { Outlet, useNavigate } from "@solidjs/router";
 import { createEffect } from "solid-js";
 
-export function AuthLayout() {
+export default function AuthLayout() {
   const navigate = useNavigate();
 
   createEffect(() => {
