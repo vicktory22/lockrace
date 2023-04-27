@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client", "vitest"],
+    "types": ["vite/client", "vitest", "@cloudflare/workers-types"],
     "noEmit": true,
     "isolatedModules": true
   }
