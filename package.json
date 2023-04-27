@@ -13,6 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230404.0",
     "@solidjs/testing-library": "^0.7.0",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/jest-dom": "^5.16.5",
