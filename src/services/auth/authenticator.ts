@@ -20,7 +20,6 @@ function AuthManager(env: string) {
   return {
     getAuthClient: async (publishableKey: string): Promise<AuthClient> => {
       if (env === "test") {
-        console.log('Creating fake client');
         return TestClient();
       }
 
