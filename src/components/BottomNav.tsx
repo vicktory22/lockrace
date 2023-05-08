@@ -1,7 +1,7 @@
-import { A } from "@solidjs/router";
 import { HomeIcon } from "../icons/HomeIcon";
 import { TrophyIcon } from "../icons/TrophyIcon";
 import { UserIcon } from "../icons/User";
+import { A } from "@solidjs/router";
 
 export function BottomNav() {
   return (
