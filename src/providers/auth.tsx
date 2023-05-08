@@ -12,7 +12,7 @@ type AuthContextProps = {
 
 const AuthContext = createContext<AuthClient>();
 
-export function AuthProvider(props: AuthContextProps) {
+export default function AuthProvider(props: AuthContextProps) {
   return <AuthContext.Provider value={props.client}>{props.children}</AuthContext.Provider>;
 }
 
