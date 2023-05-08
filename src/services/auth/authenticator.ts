@@ -1,33 +1,26 @@
-import Cookie from "js-cookie";
-import { Magic } from "magic-sdk";
-import { ResultAsync } from "neverthrow";
+import Clerk from "@clerk/clerk-js";
 
-const AUTH_COOKIE = "_did";
+export type SignInProps = {
+  afterSignInUrl?: string;
+};
 
-const client = getClient();
+export type AuthClient = {
+  isAuthenticated: () => boolean;
+  token: () => Promise<string | null | undefined>;
+  user: Clerk["user"];
+  client: Clerk["client"];
+  openSignIn: (props: SignInProps) => void;
+};
 
-export function isAuthenticated() {
-  return !!Cookie.get(AUTH_COOKIE);
-}
+export async function AuthClient(): Promise<AuthClient> {
+  const authClient = new Clerk(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+  await authClient.load();
 
-export function loginUser(phoneNumber: string): ResultAsync<string | void | null, unknown> {
-  return ResultAsync.fromPromise(client.auth.loginWithSMS({ phoneNumber }).then(writeLoginCookie), (error) => error);
-}
-
-function writeLoginCookie(did: string | null) {
-  Cookie.set(AUTH_COOKIE, did || ""); // TODO revist this how to handle null
-}
-
-function getClient() {
-  if (import.meta.env.MODE === "test") {
-    return {
-      auth: {
-        loginWithSMS: async ({ phoneNumber: _ }: { phoneNumber: string }) => {
-          return Promise.resolve("did:ethr:0x1234567890123456789012345678901234567890");
-        },
-      },
-    };
-  }
-
-  return new Magic(import.meta.env.VITE_AUTH_PUBLIC_KEY);
+  return {
+    isAuthenticated: () => authClient.session?.status === "active",
+    token: async () => authClient.session?.getToken(),
+    user: authClient.user,
+    client: authClient.client,
+    openSignIn: () => authClient.openSignIn(),
+  };
 }
