@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@sniptt/monads':
+    specifier: ^0.5.10
+    version: 0.5.10
   '@solidjs/router':
     specifier: ^0.8.2
     version: 0.8.2(solid-js@1.7.3)
@@ -849,6 +852,11 @@ packages:
   /@sinclair/typebox@0.25.24:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
+
+  /@sniptt/monads@0.5.10:
+    resolution: {integrity: sha512-+agDOv9DpDV+9e2zN/Vmdk+XaqGx5Sykl0fqhqgiJ90r18nsBkxe44DmZ2sA1HYK+MSsBeZBiAr6pq4w+5uhfw==}
+    engines: {node: '>=14', npm: '>=7'}
+    dev: false
 
   /@solidjs/router@0.8.2(solid-js@1.7.3):
     resolution: {integrity: sha512-gUKW+LZqxtX6y/Aw6JKyy4gQ9E7dLqp513oB9pSYJR1HM5c56Pf7eijzyXX+b3WuXig18Cxqah4tMtF0YGu80w==}
