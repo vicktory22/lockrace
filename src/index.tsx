@@ -1,4 +1,5 @@
-import App from "./App";
+import { lazy } from "solid-js";
+const App = lazy(() => import("./App"));
 /* @refresh reload */
 import { render } from "solid-js/web";
 
