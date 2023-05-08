@@ -13,7 +13,24 @@ export type AuthClient = {
 };
 
 export async function AuthClient(): Promise<AuthClient> {
-  const authClient = new Clerk(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+  return AuthManager(import.meta.env.MODE).getAuthClient(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+}
+
+function AuthManager(env: string) {
+  return {
+    getAuthClient: async (publishableKey: string): Promise<AuthClient> => {
+      if (env === "test") {
+        console.log('Creating fake client');
+        return TestClient();
+      }
+
+      return await ClerkClient(publishableKey);
+    },
+  };
+}
+
+async function ClerkClient(publishableKey: string) {
+  const authClient = new Clerk(publishableKey);
   await authClient.load();
 
   return {
@@ -22,5 +39,15 @@ export async function AuthClient(): Promise<AuthClient> {
     user: authClient.user,
     client: authClient.client,
     openSignIn: () => authClient.openSignIn(),
+  };
+}
+
+function TestClient() {
+  return {
+    isAuthenticated: () => true,
+    token: async () => "test-token",
+    user: {} as AuthClient["user"],
+    client: {} as AuthClient["client"],
+    openSignIn: () => {},
   };
 }
