@@ -18,6 +18,7 @@ const handler: ExportedHandler<Env> = {
       return HttpResponses.internalServerError('Unable to fetch games.');
     }
 
+
     return HttpResponses.ok(JSON.stringify(gamesResponse.unwrap()));
   },
 };
