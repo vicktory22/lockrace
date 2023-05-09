@@ -26,4 +26,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
     - run: pnpm install
-    - run: npx wrangler publish workers/cron/refresh-games.ts --name refresh-games --compatibility_date "2023-05-09"
+    - run: npx wrangler publish workers/cron/refresh-games.ts --name refresh-games --compatibility_date 2023-05-09
