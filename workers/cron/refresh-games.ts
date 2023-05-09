@@ -18,16 +18,6 @@ const handler: ExportedHandler<Env> = {
       return HttpResponses.internalServerError('Unable to fetch games.');
     }
 
-    // id,
-    // home_team_id,
-    // await_team_id
-    // game_time
-    // home_odds
-    // away_odds
-    // home_score
-    // away_score
-    
-
     return HttpResponses.ok(JSON.stringify(gamesResponse.unwrap()));
   },
 };
