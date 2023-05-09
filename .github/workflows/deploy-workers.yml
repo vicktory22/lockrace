@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'workers/**'
+      - 'workers/cron/**'
 
 jobs:
   build:
@@ -26,5 +26,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
     - run: pnpm install
-    - run: pnpm run build
-    - run: pnpm test -- --run
+    - run: npx wrangler publish workers/cron/refresh-games.ts --name refresh-games --compatibility_date "2023-05-09"
