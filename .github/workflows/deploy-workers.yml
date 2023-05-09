@@ -3,8 +3,8 @@ name: deploy-workers
 on:
   push:
     branches: [ main ]
-  paths:
-    - 'workers/**'
+    paths:
+      - 'workers/**'
 
 jobs:
   build:
