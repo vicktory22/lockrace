@@ -3,10 +3,12 @@ name: ci
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - "workers/**"
   pull_request:
     branches: [ main ]
-  paths-ignore:
-    - "workers/**"
+    paths-ignore:
+      - "workers/**"
 
 
 jobs:
