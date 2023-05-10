@@ -10,10 +10,8 @@ type Env = {
 
 const handler: ExportedHandler<Env> = {
   async fetch(_request, env: Env, _ctx) {
-    const host = env.GAMES_URL;
-    
     const gamesResponse = await fromPromise(
-      fetch(host).then((res) => res.json())
+      fetch(env.GAMES_URL).then((res) => res.json())
     );
 
     if (gamesResponse.isErr()) {
