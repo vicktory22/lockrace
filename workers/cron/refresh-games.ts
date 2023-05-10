@@ -3,9 +3,6 @@ import { fromPromise } from "../../src/services/result";
 
 type Env = {
   GAMES_URL: string,
-  DB_HOST: string,
-  DB_USERNAME: string,
-  DB_PASSWORD: string,
 }
 
 const handler: ExportedHandler<Env> = {
