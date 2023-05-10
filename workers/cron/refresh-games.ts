@@ -2,7 +2,7 @@ import { HttpResponses } from "../../src/services/http-responses/http-responses"
 import { fromPromise } from "../../src/services/result";
 
 type Env = {
-  GAMES_URL: string,
+  GAMES_URL: string;
 }
 
 const handler: ExportedHandler<Env> = {
