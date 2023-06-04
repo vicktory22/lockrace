@@ -3,6 +3,7 @@ import { TrophyIcon } from "../icons/TrophyIcon";
 import { UserIcon } from "../icons/User";
 import { A } from "@solidjs/router";
 import { BulletListIcon } from "../icons/BulletList";
+import { ChatBubble } from "../icons/ChatBubble";
 
 export function BottomNav() {
   return (
@@ -12,6 +13,9 @@ export function BottomNav() {
       </A>
       <A href="/picks" end={true}>
         <BulletListIcon />
+      </A>
+      <A href="/picks" end={true}>
+        <ChatBubble />
       </A>
       <A href="/games">
         <TrophyIcon />
