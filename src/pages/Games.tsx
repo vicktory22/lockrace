@@ -6,7 +6,7 @@ export default function Games(): JSX.Element {
 
   return (
     <article class="prose w-full">
-      <h1>Games</h1>
+      <h2>Games</h2>
       <Show when={teams.loading}>Loading...</Show>
       <Show when={teams.error}>Error: {teams.error.message}</Show>
       <Show when={teams()}>
