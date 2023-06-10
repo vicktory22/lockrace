@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.19.1]
+        node-version: [18.16.0]
 
     steps:
     - uses: actions/checkout@v3
@@ -29,4 +29,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
     - run: pnpm install
-    - run: npx wrangler publish workers/cron/refresh-games.ts --name refresh-games --compatibility-date 2023-05-09 --var GAMES_URL:${{ vars.GAMES_URL }}
+    - run: npx wrangler deploy workers/cron/refresh-games.ts --name refresh-games --compatibility-date 2023-05-09 --var GAMES_URL:${{ vars.GAMES_URL }}
