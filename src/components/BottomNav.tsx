@@ -1,9 +1,9 @@
+import { ChatBubble } from "../icons/ChatBubble";
 import { HomeIcon } from "../icons/HomeIcon";
+import { PlusSign } from "../icons/PlusSign";
 import { TrophyIcon } from "../icons/TrophyIcon";
 import { UserIcon } from "../icons/User";
 import { A } from "@solidjs/router";
-import { BulletListIcon } from "../icons/BulletList";
-import { ChatBubble } from "../icons/ChatBubble";
 
 export function BottomNav() {
   return (
@@ -12,7 +12,7 @@ export function BottomNav() {
         <HomeIcon />
       </A>
       <A href="/picks" end={true}>
-        <BulletListIcon />
+        <PlusSign />
       </A>
       <A href="/picks" end={true}>
         <ChatBubble />
